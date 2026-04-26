@@ -1,0 +1,25 @@
+{
+  "name": "turbos-x",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "npm@11.11.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "dev:web": "npm run dev --workspace @smartstore/web",
+    "dev:api": "npm run start:dev --workspace @smartstore/api",
+    "build:web": "npm run build --workspace @smartstore/web",
+    "build:api": "npm run build --workspace @smartstore/api"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.14"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
