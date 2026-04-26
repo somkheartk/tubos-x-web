@@ -22,24 +22,24 @@ export default function AdminStockPage() {
       </header>
 
       <section className="mt-8 grid gap-4 md:grid-cols-3">
-        <article className="rounded-3xl border border-ink/10 bg-white/80 p-5">
+        <article className="rounded-3xl border border-[#efeae1] bg-[#faf8f4] p-5">
           <p className="text-sm text-ink/55">Total SKUs</p>
           <p className="mt-3 text-3xl font-semibold">248</p>
           <p className="mt-2 text-sm text-ink/65">ครอบคลุมทุกคลังและทุกสาขา</p>
         </article>
-        <article className="rounded-3xl border border-ink/10 bg-white/80 p-5">
+        <article className="rounded-3xl border border-[#efeae1] bg-[#faf8f4] p-5">
           <p className="text-sm text-ink/55">Inbound today</p>
           <p className="mt-3 text-3xl font-semibold">16 lots</p>
           <p className="mt-2 text-sm text-ink/65">รอรับเข้า 2 suppliers</p>
         </article>
-        <article className="rounded-3xl border border-ink/10 bg-white/80 p-5">
+        <article className="rounded-3xl border border-[#efeae1] bg-[#faf8f4] p-5">
           <p className="text-sm text-ink/55">Transfer requests</p>
           <p className="mt-3 text-3xl font-semibold">7</p>
           <p className="mt-2 text-sm text-ink/65">ระหว่างสาขาและคลังหลัก</p>
         </article>
       </section>
 
-      <section className="mt-8 rounded-[28px] border border-ink/10 bg-white p-6">
+      <section className="mt-8 rounded-[28px] border border-[#efeae1] bg-[#faf8f4] p-6">
         <div className="flex flex-col gap-3 border-b border-ink/10 pb-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-ink/45">Low Stock Watch</p>
@@ -47,7 +47,7 @@ export default function AdminStockPage() {
           </div>
           <button
             type="button"
-            className="rounded-2xl border border-ink/10 bg-[#fffaf4] px-4 py-3 text-sm font-medium text-ink"
+            className="rounded-2xl border border-[#efeae1] bg-[#fdfcf9] px-4 py-3 text-sm font-medium text-ink"
           >
             Export inventory report
           </button>
@@ -66,7 +66,7 @@ export default function AdminStockPage() {
             </thead>
             <tbody>
               {stockItems.map((item) => (
-                <tr key={item.sku} className="rounded-2xl bg-[#fffaf4] text-sm text-ink/80">
+                <tr key={item.sku} className="rounded-2xl bg-[#fdfcf9] text-sm text-ink/80">
                   <td className="rounded-l-2xl px-4 py-4 font-medium">{item.sku}</td>
                   <td className="px-4 py-4">{item.product}</td>
                   <td className="px-4 py-4">{item.onHand}</td>

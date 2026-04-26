@@ -76,13 +76,13 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   }
 
   return (
-    <main className="min-h-screen bg-[#edf1f5] text-ink">
+    <main className="min-h-screen bg-[#f6f3ed] text-ink">
       <div className="grid min-h-screen lg:grid-cols-[300px_minmax(0,1fr)] xl:grid-cols-[320px_minmax(0,1fr)]">
-        <aside className="border-b border-white/10 bg-[#111a2b] p-6 text-white sm:p-7 lg:min-h-screen lg:border-b-0 lg:border-r lg:border-r-white/10 lg:px-8 lg:py-10">
-          <div className="border-b border-white/10 pb-6">
-            <p className="text-sm font-medium uppercase tracking-[0.24em] text-white/55">Admin Panel</p>
+        <aside className="border-b border-[#ece7de] bg-white p-6 text-ink sm:p-7 lg:min-h-screen lg:border-b-0 lg:border-r lg:border-r-[#ece7de] lg:px-8 lg:py-10">
+          <div className="border-b border-[#f1ede6] pb-6">
+            <p className="text-sm font-medium uppercase tracking-[0.24em] text-ink/40">Admin Panel</p>
             <h1 className="mt-3 text-2xl font-semibold">Stock / POS Control</h1>
-            <p className="mt-3 text-sm leading-7 text-white/65">
+            <p className="mt-3 text-sm leading-7 text-ink/50">
               เมนูหลักสำหรับคลังสินค้า หน้าขาย และการบริหารการดำเนินงานของแต่ละสาขา
             </p>
           </div>
@@ -90,7 +90,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           <nav className="mt-6 space-y-6">
             {sidebarSections.map((section) => (
               <div key={section.title}>
-                <p className="text-xs font-medium uppercase tracking-[0.22em] text-white/35">
+                <p className="text-xs font-medium uppercase tracking-[0.22em] text-ink/35">
                   {section.title}
                 </p>
                 <div className="mt-3 space-y-2">
@@ -103,12 +103,19 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                         href={item.href}
                         className={`flex items-center justify-between rounded-2xl px-4 py-3 text-left text-sm transition ${
                           isActive
-                            ? 'bg-white text-ink shadow-sm'
-                            : 'bg-white/5 text-white/78 hover:bg-white/10'
+                            ? 'border border-transparent bg-[#f9f7f2] pl-3 text-ink'
+                            : 'border border-transparent bg-transparent text-ink/68 hover:bg-[#faf8f4] hover:text-ink'
                         }`}
                       >
-                        <span>{item.label}</span>
-                        <span className={`${isActive ? 'text-coral' : 'text-white/35'}`}>+</span>
+                        <span className="flex items-center gap-3">
+                          <span
+                            className={`block h-5 w-[3px] rounded-full ${
+                              isActive ? 'bg-coral' : 'bg-transparent'
+                            }`}
+                          />
+                          <span>{item.label}</span>
+                        </span>
+                        <span className={`${isActive ? 'text-coral' : 'text-ink/25'}`}>+</span>
                       </Link>
                     );
                   })}
@@ -117,21 +124,21 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             ))}
           </nav>
 
-          <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-4">
-            <p className="text-sm font-medium text-white/65">Logged in</p>
+          <div className="mt-8 rounded-3xl border border-[#f0ebe3] bg-[#fcfbf8] p-4">
+            <p className="text-sm font-medium text-ink/50">Logged in</p>
             <p className="mt-2 text-base font-semibold">somkheart.k@gmail.com</p>
             <button
               type="button"
               onClick={handleLogout}
-              className="mt-4 w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/15"
+              className="mt-4 w-full rounded-2xl border border-[#ece5d9] bg-white px-4 py-3 text-sm font-medium text-ink transition hover:bg-[#f8f6f1]"
             >
               ออกจากระบบ
             </button>
           </div>
         </aside>
 
-        <section className="min-w-0 bg-[linear-gradient(180deg,#f8fafc_0%,#edf1f5_100%)]">
-          <div className="border-b border-slate-200/80 bg-white/80 px-6 py-5 backdrop-blur sm:px-8 lg:px-10">
+        <section className="min-w-0 bg-[linear-gradient(180deg,#fbfaf7_0%,#f5f1ea_100%)]">
+          <div className="border-b border-[#efeae1] bg-[#fbfaf7]/94 px-6 py-5 backdrop-blur sm:px-8 lg:px-10">
             <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
               <div>
                 <p className="text-sm font-medium uppercase tracking-[0.24em] text-ink/45">
@@ -144,7 +151,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                 <span className="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 font-medium text-emerald-700">
                   All services healthy
                 </span>
-                <span className="rounded-full border border-slate-200 bg-white px-4 py-2 font-medium text-ink/70">
+                <span className="rounded-full border border-[#efeae1] bg-[#fdfcf9] px-4 py-2 font-medium text-ink/70">
                   Asia Southeast 1
                 </span>
               </div>
