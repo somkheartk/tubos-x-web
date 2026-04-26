@@ -76,9 +76,9 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   }
 
   return (
-    <main className="min-h-screen bg-aura px-5 py-8 text-ink sm:px-8 lg:px-10">
-      <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[280px_minmax(0,1fr)]">
-        <aside className="rounded-[32px] border border-white/40 bg-[#182235] p-6 text-white shadow-panel backdrop-blur sm:p-7 lg:sticky lg:top-8 lg:h-[calc(100vh-4rem)] lg:overflow-y-auto">
+    <main className="min-h-screen bg-[#edf1f5] text-ink">
+      <div className="grid min-h-screen lg:grid-cols-[300px_minmax(0,1fr)] xl:grid-cols-[320px_minmax(0,1fr)]">
+        <aside className="border-b border-white/10 bg-[#111a2b] p-6 text-white sm:p-7 lg:min-h-screen lg:border-b-0 lg:border-r lg:border-r-white/10 lg:px-8 lg:py-10">
           <div className="border-b border-white/10 pb-6">
             <p className="text-sm font-medium uppercase tracking-[0.24em] text-white/55">Admin Panel</p>
             <h1 className="mt-3 text-2xl font-semibold">Stock / POS Control</h1>
@@ -130,9 +130,31 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           </div>
         </aside>
 
-        <div className="rounded-[32px] border border-white/40 bg-white/65 p-6 shadow-panel backdrop-blur sm:p-8 lg:p-10">
-          {children}
-        </div>
+        <section className="min-w-0 bg-[linear-gradient(180deg,#f8fafc_0%,#edf1f5_100%)]">
+          <div className="border-b border-slate-200/80 bg-white/80 px-6 py-5 backdrop-blur sm:px-8 lg:px-10">
+            <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
+              <div>
+                <p className="text-sm font-medium uppercase tracking-[0.24em] text-ink/45">
+                  Smartstore Admin Suite
+                </p>
+                <p className="mt-2 text-2xl font-semibold text-ink">Full-screen operations workspace</p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 text-sm">
+                <span className="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 font-medium text-emerald-700">
+                  All services healthy
+                </span>
+                <span className="rounded-full border border-slate-200 bg-white px-4 py-2 font-medium text-ink/70">
+                  Asia Southeast 1
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="px-6 py-6 sm:px-8 lg:px-10 lg:py-8">
+            {children}
+          </div>
+        </section>
       </div>
     </main>
   );
